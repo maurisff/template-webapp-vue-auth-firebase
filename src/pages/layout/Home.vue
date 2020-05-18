@@ -1,6 +1,6 @@
 <template>
 <v-container>
-  <div>Ola mundo</div><!--
+  <div>Bem Vindo ao App: {{ appTitle }}</div><!--
   <v-card v-if="(auth && auth.admin)">
   <div>
     <inputPessoa v-model="pessoa" ></inputPessoa> 
@@ -39,6 +39,9 @@ export default {
   created() {
   },
   computed: {
+      appTitle (){
+        return process.env.VUE_APP_TITLE
+      },
     auth(){
       return (this.$store.getters['authentication/user'] ? this.$store.getters['authentication/user'] : null)
     },

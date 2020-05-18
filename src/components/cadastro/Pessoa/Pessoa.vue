@@ -217,9 +217,9 @@
             var tmpData = response.data.data || [];
             tmpData = tmpData.map(e => { 
               return Object.assign({
-                cpfcnpjTxt: (e.cpfcnpj.length === 11 ? 
+                cpfcnpjTxt: (e.cpfcnpj && e.cpfcnpj.length === 11 ? 
                             e.cpfcnpj.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4") : 
-                            (e.cpfcnpj.length === 15 ? e.cpfcnpj.replace(/^(\d{3})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5"): e.cpfcnpj)),
+                            (e.cpfcnpj && e.cpfcnpj.length === 15 ? e.cpfcnpj.replace(/^(\d{3})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5"): e.cpfcnpj)),
                 enderecoTxt: (e.endereco && e.endereco.rua ? 
                   `${e.endereco.rua}${(e.endereco.numero ? ', nº '+e.endereco.numero: '')}${(e.endereco.complemento ? ' ('+e.endereco.complemento+')': '')}${(e.endereco.bairro ? ' - '+e.endereco.bairro: '')}${(e.endereco.cidade ? ' - '+e.endereco.cidade: '')}`
                   : null)
