@@ -2,25 +2,27 @@
 
   export default [
     {
-      path: '//',
+      path: '/',
       meta: {
         codigo: 'PAG000',
+        order: 0,
         title: 'Home',
+        icon: 'home',
         isMenu: true,
         MenuTitle: '',
-        pagePublic: true
+        isPublic: true
       },
       component: lazyLoading('layout/Home')
     }, {
       path: '/erro/404',
       meta: {
-        pagePublic: true
+        isPublic: true
       },
       component: lazyLoading('erro/NotFound')
     }, {
       path: '/erro/ops',
       meta: {
-            pagePublic: true
+            isPublic: true
       },
       component: lazyLoading('erro/OtherErro')
     },
@@ -29,7 +31,7 @@
       meta: {
           codigo: 'AUT001',
           title: 'Login',
-          pagePublic: true
+          isPublic: true
       },
       component: lazyLoading('acesso/Entrar')
   }, {
@@ -37,7 +39,7 @@
       meta: {
           codigo: 'AUT002',
           title: 'Registre-se',
-          pagePublic: true
+          isPublic: true
       },
       component: lazyLoading('acesso/Registre-se')
   }, {
@@ -45,7 +47,7 @@
     meta: {
         codigo: 'AUT003',
         title: 'Finalizar',
-        pagePublic: true
+        isPublic: true
     },
     component: lazyLoading('acesso/Finalizar')
   }, {
@@ -73,12 +75,49 @@
     path: '/cadastro/pessoas',
     meta: {
       codigo: 'CAD001',
+      order: 1,
       title: 'Pessoas',
-      MenuTitle: 'Cadastro',
-      menuClassIcon: null,
-      menuPathIcon: null,
-      classIcon: null,
-      pathIcon: null,
+      icon: 'people',
+      groupOrder: 1,
+      groupTitle: 'Cadastro',
+      groupIcon: 'add',
+      isMenu: true
+    },
+    component: lazyLoading('cadastro/Pessoa')
+  }, {
+    path: '/cadastro/Produto',
+    meta: {
+      codigo: 'CAD002',
+      order: 2,
+      title: 'Produto',
+      icon: 'people',
+      groupOrder: 1,
+      groupTitle: 'Cadastro',
+      groupIcon: 'add',
+      isMenu: true,
+    },
+    component: lazyLoading('cadastro/Pessoa')
+  }, {
+    path: '/admin/usuario',
+    meta: {
+      codigo: 'ADM001',
+      order: 1,
+      title: 'Usuarios',
+      icon: 'people',
+      isAdmin: true,
+      groupOrder: 9,
+      groupTitle: 'Administração',
+      groupIcon: 'people',
+      isMenu: true
+    },
+    component: lazyLoading('cadastro/Pessoa')
+  }, {
+    path: '/usuario/perfil',
+    meta: {
+      codigo: 'ADM999',
+      order: 99,
+      title: 'Perfil',
+      icon: 'people',
       isMenu: true
     },
     component: lazyLoading('cadastro/Pessoa')
