@@ -29,6 +29,9 @@
             :key="`menu-${i}`"
             :value="activeMenu(item)"
             :to="{path: item.link}" >
+            <v-list-item-action>
+              <v-icon v-if="item.icon" v-html="item.icon"></v-icon>
+            </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title v-text="item.title"></v-list-item-title>
             </v-list-item-content>
